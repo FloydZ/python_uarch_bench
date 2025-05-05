@@ -1,0 +1,235 @@
+Driver: amd-pstate-epp, governor: performance
+Vendor ID: AuthenticAMD
+Inc.
+Model name: AMD Ryzen 5 7600X 6-Core Processor
+BIOS AMD Ryzen 5 7600X 6-Core Processor              Unknown CPU @ 4.7GHz
+Using timer: clock
+Welcome to uarch-bench (e4f54d5)
+Supported CPU features: SSE3 PCLMULQDQ SSSE3 FMA CX16 SSE4_1 SSE4_2 MOVBE POPCNT AES AVX RDRND BMI1 AVX2 BMI2 ERMS PQE AVX512F AVX512DQ RDSEED ADX AVX512IFMA CLFLUSHOPT CLWB AVX512CD SHA AVX512BW AVX512VL
+Pinned to CPU 0
+Source pages allocated with transparent hugepages: 100.0
+Median CPU speed: 5.426 GHz
+Running benchmarks groups using timer clock
+
+** Running group basic : Basic Benchmarks **
+                               Benchmark    Cycles     Nanos
+                     Dependent add chain      1.00      0.18
+                   Independent add chain      0.25      0.05
+                  Dependent imul 64->128      2.99      0.55
+                   Dependent imul 64->64      3.11      0.57
+                Independent imul 64->128      1.00      0.18
+                 Independent imul 64->64      1.00      0.18
+                    Same location stores      0.50      0.09
+                Disjoint location stores      0.50      0.09
+                Dependent push/pop chain      1.00      0.18
+              Independent push/pop chain      1.00      0.18
+     Back-to-back call of empty function      4.11      0.76
+            64-bit dependent div 1/1 = 1     11.37      2.10
+           64-bit dependent idiv 1/1 = 1     11.41      2.10
+                 same location inc [mem]      1.00      0.18
+              same location add [mem], 1      1.00      0.18
+                   multiple add [mem], 1      1.01      0.19
+                        Calibration subs      1.00      0.18
+                    Calibration subs x10      1.00      0.18
+                   Calibration subs x10b      0.99      0.18
+            Calibration subs w/ register      1.00      0.18
+                 Calibration subs w/ nop      0.99      0.18
+             Calibration subs value 1000      0.99      0.18
+              Calibration subs value 100      0.99      0.18
+                Calibration subs value 2      0.99      0.18
+                Calibration subs value 1      0.99      0.18
+                   1 dependent add chain      1.00      0.18
+                   2 dependent add chain      1.00      0.18
+                   3 dependent add chain      1.00      0.18
+                   4 dependent add chain      1.01      0.19
+                   5 dependent add chain      1.26      0.23
+             128 consecutive 1-byte nops      0.09      0.02
+             128 consecutive 2-byte nops      0.08      0.02
+            128 consecutive xor eax, eax      0.17      0.03
+                         6 adds, 0 loads      0.25      0.05
+                         6 adds, 1 loads      0.21      0.04
+                         6 adds, 2 loads      0.19      0.03
+                         6 adds, 3 loads      0.19      0.03
+                         6 adds, 4 loads      0.20      0.04
+                         6 adds, 5 loads      0.19      0.03
+                         6 adds, 6 loads      0.21      0.04
+         Simple addressing pointer chase      4.00      0.74
+               Base + 2047 pointer chase      5.19      0.96
+               Base + 2048 pointer chase      4.14      0.76
+        Complex addressing pointer chase      5.19      0.96
+        Simple pointer chase FS override      5.19      0.96
+       Complex pointer chase FS override      5.19      0.96
+           back-to-back rdtsc throughput     34.99      6.45
+          back-to-back rdtscp throughput     67.47     12.43
+Finished in 1482 ms (basic)
+
+** Running group bmi : BMI false-dependency tests **
+                               Benchmark    Cycles     Nanos
+                    dest-dependent tzcnt      0.25      0.05
+                    dest-dependent lzcnt      0.25      0.05
+                   dest-dependent popcnt      0.25      0.05
+Finished in 6 ms (bmi)
+
+** Running group avx512 : AVX512 stuff **
+                               Benchmark    Cycles     Nanos
+                kreg-GP rountrip latency      9.34      1.72
+    kreg-GP roundtrip + nonzeroing kxorb     10.37      1.91
+       kreg-GP roundtrip + zeroing kxorb      1.00      0.18
+         kreg-GP roundtrip + mov from GP      1.99      0.37
+Finished in 189 ms (avx512)
+
+** Running group studies/vzeroall : VZEROALL weirdness **
+                               Benchmark    Cycles     Nanos
+                 vpaddq zmm0, zmm0, zmm0      1.00      0.18
+                 vpaddq zmm0, zmm1, zmm0      1.04      0.19
+                vpaddq zmm0, zmm16, zmm0      1.04      0.19
+   vpxor zmm16; vpaddq zmm0, zmm16, zmm0      1.04      0.19
+                 vpaddq ymm0, ymm0, ymm0      1.04      0.19
+                 vpaddq ymm0, ymm1, ymm0      1.04      0.19
+                 vpaddq xmm0, xmm0, xmm0      1.04      0.19
+                 vpaddq xmm0, xmm1, xmm0      1.04      0.19
+                        paddq xmm0, xmm0      1.04      0.19
+                        paddq xmm0, xmm1      1.04      0.19
+Finished in 66 ms (studies/vzeroall)
+
+** Running group memory/load-parallel : Random(ish) parallel loads from fixed-size regions **
+                               Benchmark    Cycles     Nanos
+Source pages allocated with transparent hugepages: 100.0
+                    16-KiB parallel load      0.40      0.07
+                    24-KiB parallel load      0.41      0.08
+                    30-KiB parallel load      0.41      0.07
+                    31-KiB parallel load      0.41      0.07
+                    32-KiB parallel load      0.41      0.07
+                    33-KiB parallel load      0.42      0.08
+                    34-KiB parallel load      0.43      0.08
+                    35-KiB parallel load      0.43      0.08
+                    40-KiB parallel load      0.76      0.14
+                    48-KiB parallel load      2.00      0.37
+                    56-KiB parallel load      2.00      0.37
+                    64-KiB parallel load      2.00      0.37
+                    80-KiB parallel load      2.00      0.37
+                    96-KiB parallel load      2.00      0.37
+                   112-KiB parallel load      2.00      0.37
+                   128-KiB parallel load      2.00      0.37
+                   196-KiB parallel load      2.00      0.37
+                   252-KiB parallel load      2.00      0.37
+                   256-KiB parallel load      2.00      0.37
+                   260-KiB parallel load      0.40      0.07
+                   384-KiB parallel load      2.00      0.37
+                   512-KiB parallel load      2.00      0.37
+                  1024-KiB parallel load      2.01      0.37
+                  2048-KiB parallel load      2.83      0.52
+Finished in 1851 ms (memory/load-parallel)
+
+** Running group memory/store-parallel : Parallel stores to fixed-size regions **
+                               Benchmark    Cycles     Nanos
+                   16-KiB parallel store      1.00      0.18
+                   24-KiB parallel store      1.00      0.18
+                   30-KiB parallel store      1.00      0.18
+                   31-KiB parallel store      1.00      0.18
+                   32-KiB parallel store      1.00      0.18
+                   33-KiB parallel store      1.03      0.19
+                   34-KiB parallel store      1.37      0.25
+                   35-KiB parallel store      1.15      0.21
+                   40-KiB parallel store      1.64      0.30
+                   48-KiB parallel store      2.26      0.42
+                   56-KiB parallel store      2.20      0.41
+                   64-KiB parallel store      2.25      0.42
+                   80-KiB parallel store      2.26      0.42
+                   96-KiB parallel store      2.27      0.42
+                  112-KiB parallel store      2.27      0.42
+                  128-KiB parallel store      2.27      0.42
+                  196-KiB parallel store      2.25      0.41
+                  252-KiB parallel store      2.25      0.41
+                  256-KiB parallel store      2.25      0.41
+                  260-KiB parallel store      1.00      0.18
+                  384-KiB parallel store      2.28      0.42
+                  512-KiB parallel store      2.28      0.42
+                 1024-KiB parallel store      2.31      0.43
+                 2048-KiB parallel store      2.84      0.52
+Finished in 2257 ms (memory/store-parallel)
+
+** Running group memory/prefetch-parallel : Parallel prefetches from fixed-size regions **
+                               Benchmark    Cycles     Nanos
+              16-KiB parallel prefetcht0      0.37      0.07
+              16-KiB parallel prefetcht1      1.02      0.19
+              16-KiB parallel prefetcht2      1.00      0.18
+             16-KiB parallel prefetchnta      0.37      0.07
+              32-KiB parallel prefetcht0      0.39      0.07
+              32-KiB parallel prefetcht1      0.97      0.18
+              32-KiB parallel prefetcht2      0.99      0.18
+             32-KiB parallel prefetchnta      0.38      0.07
+              64-KiB parallel prefetcht0      0.60      0.11
+              64-KiB parallel prefetcht1      0.97      0.18
+              64-KiB parallel prefetcht2      0.95      0.17
+             64-KiB parallel prefetchnta      0.60      0.11
+             128-KiB parallel prefetcht0      0.94      0.17
+             128-KiB parallel prefetcht1      0.96      0.18
+             128-KiB parallel prefetcht2      0.96      0.18
+            128-KiB parallel prefetchnta      0.93      0.17
+             256-KiB parallel prefetcht0      0.94      0.17
+             256-KiB parallel prefetcht1      0.97      0.18
+             256-KiB parallel prefetcht2      0.96      0.18
+            256-KiB parallel prefetchnta      0.94      0.17
+             512-KiB parallel prefetcht0      0.94      0.17
+             512-KiB parallel prefetcht1      0.97      0.18
+             512-KiB parallel prefetcht2      0.97      0.18
+            512-KiB parallel prefetchnta      0.94      0.17
+            2048-KiB parallel prefetcht0      0.95      0.17
+            2048-KiB parallel prefetcht1      0.97      0.18
+            2048-KiB parallel prefetcht2      0.95      0.18
+           2048-KiB parallel prefetchnta      0.95      0.17
+            4096-KiB parallel prefetcht0      0.96      0.18
+            4096-KiB parallel prefetcht1      0.97      0.18
+            4096-KiB parallel prefetcht2      0.96      0.18
+           4096-KiB parallel prefetchnta      0.95      0.18
+            8192-KiB parallel prefetcht0      0.98      0.18
+            8192-KiB parallel prefetcht1      0.97      0.18
+            8192-KiB parallel prefetcht2      0.97      0.18
+           8192-KiB parallel prefetchnta      0.98      0.18
+           32768-KiB parallel prefetcht0      1.00      0.18
+           32768-KiB parallel prefetcht1      0.96      0.18
+           32768-KiB parallel prefetcht2      0.97      0.18
+          32768-KiB parallel prefetchnta      1.00      0.18
+Finished in 297 ms (memory/prefetch-parallel)
+
+** Running group memory/pointer-chase : Pointer-chasing **
+                               Benchmark    Cycles     Nanos
+  Simple addressing chase, half diffpage      3.99      0.74
+Simple addressing chase, different pages      4.14      0.76
+     Simple addressing chase with ALU op      5.00      0.92
+                   load5 -> load4 -> alu      9.00      1.66
+                   load4 -> load5 -> alu      8.99      1.66
+        8 parallel simple pointer chases      3.99      0.74
+      10 parallel complex pointer chases      4.41      0.81
+        10 parallel mixed pointer chases      4.50      0.83
+Finished in 273 ms (memory/pointer-chase)
+
+** Running group memory/load-serial : Random serial loads from fixed-size regions **
+                               Benchmark    Cycles     Nanos
+                     16-KiB serial loads      3.99      0.74
+                     24-KiB serial loads      3.99      0.74
+                     30-KiB serial loads      3.99      0.74
+                     31-KiB serial loads      3.99      0.74
+                     32-KiB serial loads      4.11      0.76
+                     33-KiB serial loads      6.90      1.27
+                     34-KiB serial loads      8.89      1.64
+                     35-KiB serial loads     11.69      2.15
+                     40-KiB serial loads     14.47      2.67
+                     48-KiB serial loads     14.49      2.67
+                     56-KiB serial loads     14.49      2.67
+                     64-KiB serial loads     14.50      2.67
+                     80-KiB serial loads     14.53      2.68
+                     96-KiB serial loads     14.52      2.68
+                    112-KiB serial loads     14.55      2.68
+                    128-KiB serial loads     14.55      2.68
+                    196-KiB serial loads     14.54      2.68
+                    252-KiB serial loads     14.54      2.68
+                    256-KiB serial loads     14.55      2.68
+                    260-KiB serial loads     14.53      2.68
+                    384-KiB serial loads     14.54      2.68
+                    512-KiB serial loads     14.54      2.68
+                   1024-KiB serial loads     14.59      2.69
+                   2048-KiB serial loads     41.65      7.68
+Finished in 205 ms (memory/load-serial)
+Restored no_turbo state: 

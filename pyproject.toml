@@ -1,0 +1,25 @@
+[project]
+name = "python_uarch_bench"
+version = "0.1.0"
+description = "Samples architecture information"
+readme = "README.md"
+requires-python = ">=3.8"
+#license = { text = "MIT" }
+
+authors = [
+  { name = "FloydZ", email = "floyd@rub.de" }
+]
+
+maintainers = [
+  { name = "FloydZ", email = "floyd@rub.de" }
+]
+
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/FloydZ/python_uarch_bench"
+"Repository" = "https://github.com/FloydZ/python_uarch_bench"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
