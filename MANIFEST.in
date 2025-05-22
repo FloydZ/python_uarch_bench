@@ -1,0 +1,2 @@
+include src/python_uarch_bench/deps/uarch-bench/uarch-bench
+include src/python_uarch_bench/deps/uarch-bench/uarch-bench.sh

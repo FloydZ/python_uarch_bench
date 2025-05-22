@@ -1,25 +1,44 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "python_uarch_bench"
 version = "0.1.0"
 description = "Samples architecture information"
 readme = "README.md"
 requires-python = ">=3.8"
-#license = { text = "MIT" }
+license-files = ["LICENSE"]
 
 authors = [
-  { name = "FloydZ", email = "floyd@rub.de" }
+  { name = "FloydZ", email = "floyd.zweydinger+github@rub.de" }
 ]
 
 maintainers = [
-  { name = "FloydZ", email = "floyd@rub.de" }
+  { name = "FloydZ", email = "floyd.zweydinger+github@rub.de" }
 ]
 
-dependencies = []
+keywords = [
+    "uarch",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Development Status :: 4 - Beta"
+]
+
+dependencies = [
+]
 
 [project.urls]
-"Homepage" = "https://github.com/FloydZ/python_uarch_bench"
 "Repository" = "https://github.com/FloydZ/python_uarch_bench"
 
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+[project.scripts]
+sample = "sample:main"
+
+[tool.setuptools]
+include-package-data = true 
+package-data = { "python_uarch_bench" = ["./deps/uarch-bench/uarch-bench", "./deps/uarch-bench/uarch-bench.sh"] }
+[packages.find]
+where = ["src"]
+include = ["deps", "src"]
+exclude = ["tests"]

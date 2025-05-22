@@ -16,7 +16,7 @@ def parse_uarch_bench_output(lines: List[str]) -> Tuple[dict, dict]:
                 {'benchmark': 'Dependent add chain', 'cycles': 1.0, 'nanos': 0.18},
                 ...
             ],
-            'bmi': ..
+            'bmi': ...
         }
     """
     groups = defaultdict(list)

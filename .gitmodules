@@ -1,3 +1,3 @@
 [submodule "deps/uarch-bench"]
-	path = deps/uarch-bench
+	path = src/python_uarch_bench/deps/uarch-bench
 	url = https://github.com/travisdowns/uarch-bench

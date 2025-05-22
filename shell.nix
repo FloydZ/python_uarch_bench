@@ -7,14 +7,13 @@ let
     ipython
     pip
     setuptools
-    virtualenvwrapper
+    virtualenv
     wheel
   ]);
 
   # add the needed packages here
   extraBuildInputs = with pkgs; [
     myPython
-    pythonPackages.numpy
     pythonPackages.pytest
     pythonPackages.pylint
 
@@ -22,10 +21,6 @@ let
     cmake
     gnumake
     gcc
-    nasm
-    msr
-    linuxHeaders
-    linuxPackages.kernel
 
     # dev helpers
     ruff
@@ -70,7 +65,7 @@ let
         export KERNELPATH=${linuxPackages.kernel.dev}
         export KERNELHEADERS=${linuxHeaders}
         pip install -e .
-        # TODO ./build.sh
+        ./build.sh
     '';
   };
 in shell
