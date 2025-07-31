@@ -1,6 +1,6 @@
 # python_uarch_bench
 
-**Microarchitectural Benchmarking Framework for Python**
+Microarchitectural Benchmarking Framework for Python
 
 `python_uarch_bench` is a framework aimed at benchmarking and analyzing microarchitectural performance characteristics of Python code. It facilitates the exploration of how Python programs interact with underlying hardware components such as the CPU pipeline, cache hierarchy, and branch predictors.
 ---
@@ -23,13 +23,14 @@ Ensure you have the following installed:
 - Optional: [Nix](https://nixos.org/) for environment management
 
 ### Installation
-    ```
-    pip install python_uarch_bench
-    ```
+
+```bash
+pip install python_uarch_bench
+```
 
 ### Running Benchmarks
 To execute the benchmark suite:
 
-```
+```bash
 python -m python_uarch_bench
 ```

@@ -21,6 +21,7 @@ let
     cmake
     gnumake
     gcc
+    nasm
 
     # dev helpers
     ruff
