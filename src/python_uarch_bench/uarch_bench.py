@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
+""" Module for interacting with uarch-bench and parsing its output """
 import re
 from collections import defaultdict
-from typing import Union, Tuple, List
-import pprint
+from typing import Tuple, List
 from subprocess import PIPE, STDOUT, Popen
 
 
@@ -67,8 +67,8 @@ def get_uarch_bench_data() -> Tuple[bool, dict, dict]:
     """
     :return the output from the `./uarch_bench.sh` script
     """
-    CMD = "deps/uarch-bench/uarch-bench.sh"
-    with Popen([CMD, "--verbose"], stdout=PIPE, stderr=STDOUT) as p:
+    cmd = "deps/uarch-bench/uarch-bench.sh"
+    with Popen([cmd, "--verbose"], stdout=PIPE, stderr=STDOUT) as p:
         p.wait()
         if p.returncode != 0:
             print("command failed")

@@ -3,3 +3,5 @@
 .pytest_cache/
 *python_uarch_bench.egg-info/
 *__pycache__/
+
+**/.claude/settings.local.json

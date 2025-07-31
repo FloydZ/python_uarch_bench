@@ -17,6 +17,8 @@ def test_simple():
 def test_get_data():
     """ test `get_uarch_bench_data()` """
     b, metadata, groups = get_uarch_bench_data()
+    print(metadata)
+    print(groups)
     assert b
 
 
